@@ -44,5 +44,13 @@
         android:layout_centerVertical="true"
         android:layout_below="@id/buttonconsulta"
         android:layout_centerHorizontal="true" />
+        android:layout_marginTop="78dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:onClick="salir"
+        android:layout_below="@+id/buttonconsulta"
+        android:layout_marginTop="78dp" />
 
 </RelativeLayout>
