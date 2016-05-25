@@ -11,23 +11,21 @@
     android:background="#9E9E9E"
     tools:context=".ConsultaActivity"
     android:weightSum="1">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Prestamos Registrados"
+                android:layout_width="362dp"
+                android:layout_height="62dp"
+                android:text="Registros"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:background="#000000"
+                android:textColor="#000000"
+                android:background="#FFFFFF"
                 android:textSize="30dp" />
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/listView" />
         </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>

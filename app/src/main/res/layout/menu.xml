@@ -50,7 +50,8 @@
         android:layout_height="wrap_content"
         android:text="Salir"
         android:onClick="salir"
-        android:layout_below="@+id/buttonconsulta"
-        android:layout_marginTop="78dp" />
+        android:layout_below="@+id/botonborrar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
