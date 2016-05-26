@@ -25,7 +25,7 @@
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="78dp" />
+        android:layout_marginTop="20dp" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +34,8 @@
         android:onClick="consulta"
         android:layout_below="@+id/buttonnew"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:layout_width="match_parent"
@@ -43,8 +44,8 @@
         android:id="@+id/botonborrar"
         android:layout_centerVertical="true"
         android:layout_below="@id/buttonconsulta"
-        android:layout_centerHorizontal="true" />
-        android:layout_marginTop="78dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +53,7 @@
         android:onClick="salir"
         android:layout_below="@+id/botonborrar"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"/>
 
 </RelativeLayout>
