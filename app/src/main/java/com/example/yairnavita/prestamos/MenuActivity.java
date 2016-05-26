@@ -1,6 +1,8 @@
 package com.example.yairnavita.prestamos;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,4 +36,5 @@ public class MenuActivity extends AppCompatActivity {
         Toast.makeText(this, "Adios", Toast.LENGTH_SHORT).show();
 
     }
+
 }

@@ -30,22 +30,26 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre Objeto" />
+                android:hint="Nombre Objeto"
+                android:id="@+id/nombreobjeto"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Cantidad" />
+                android:hint="Cantidad"
+                android:id="@+id/cantidadobjeto"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="¿A quién se lo presté?" />
+                android:hint="¿A quién se lo presté?"
+                android:id="@+id/aquienpreste"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Teléfono" />
+                android:hint="Teléfono"
+                android:id="@+id/telefono"/>
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="wrap_content"
@@ -109,7 +113,7 @@
                     android:layout_height="100dp"
                     android:inputType="textMultiLine"
                     android:ems="10"
-                    android:id="@+id/editText4"
+                    android:id="@+id/Descripcion"
                     android:layout_weight="0.35"
                     android:background="#757575"/>
             </LinearLayout>
@@ -118,8 +122,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Aceptar"
-                android:id="@+id/button"
-                android:layout_gravity="right" />
+                android:layout_gravity="right"
+                android:onClick="GuardarRegistro"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
