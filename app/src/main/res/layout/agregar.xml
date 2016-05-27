@@ -37,6 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Cantidad"
+                android:inputType="number"
                 android:id="@+id/cantidadobjeto"/>
 
             <EditText
@@ -49,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Teléfono"
+                android:inputType="number"
                 android:id="@+id/telefono"/>
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
@@ -110,7 +112,7 @@
                 tools:context=".AgregarActivity">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
                     android:ems="10"
                     android:id="@+id/Descripcion"

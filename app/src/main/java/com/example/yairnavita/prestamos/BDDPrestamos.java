@@ -9,8 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by YairNavita on 25/05/16.
  */
 public class BDDPrestamos extends SQLiteOpenHelper{
-    String tabla="CREATE TABLE Registros(Id INTEGER PRIMARY KEY AUTOINCREMENT,Nombre Text,Cantidad Float,PersonaPrestamo Text,Telefono INTEGER,FechaP Text,FechaD Text,Descripcion Text)";
-
+    String tabla="CREATE TABLE Registros(Id INTEGER PRIMARY KEY AUTOINCREMENT,Nombre Text,Cantidad Text,PersonaPrestamo Text,Telefono Text,FechaP Text,FechaD Text,Descripcion Text)";
     public BDDPrestamos(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }

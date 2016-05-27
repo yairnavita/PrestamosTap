@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:background="#9E9E9E"
-    tools:context=".ConsultaActivity"
+    tools:context=".EliminarActivity"
     android:weightSum="1">
         <LinearLayout
             android:orientation="vertical"

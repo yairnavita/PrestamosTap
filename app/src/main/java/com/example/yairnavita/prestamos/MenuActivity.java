@@ -37,4 +37,10 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+    public void borrarregistro(View view){
+        Intent i = new Intent(this, EliminarActivity.class);
+        startActivity(i);
+        Toast.makeText(this, "Borrar Registro", Toast.LENGTH_SHORT).show();
+
+    }
 }

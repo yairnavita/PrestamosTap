@@ -45,7 +45,8 @@
         android:layout_centerVertical="true"
         android:layout_below="@id/buttonconsulta"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:onClick="borrarregistro"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

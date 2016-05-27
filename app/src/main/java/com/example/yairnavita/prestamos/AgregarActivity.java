@@ -59,8 +59,6 @@ public class AgregarActivity extends Activity implements View.OnClickListener {
         this.setDate();
     }
 
-    ////////////_________////////////__________/////////////
-
     Calendar fecha = new GregorianCalendar();
     int año = fecha.get(Calendar.YEAR);
     int mes = fecha.get(Calendar.MONTH);
@@ -74,41 +72,47 @@ public class AgregarActivity extends Activity implements View.OnClickListener {
     public void GuardarRegistro(View v) {
         //Variables para obtener contenido de la vista
         String nomObj = NO.getText().toString();
-        float cantidad = Float.parseFloat(Cant.getText().toString());
+        String cantidad = Cant.getText().toString();
         String pre = AP.getText().toString();
-        int tel = Integer.parseInt(Tel.getText().toString());
+        String tel = Tel.getText().toString();
         String fechap = FechP.getText().toString();
         String fechad = FechD.getText().toString();
         String descrip = Desc.getText().toString();
+        if(nomObj.isEmpty() || cantidad.isEmpty() || pre.isEmpty() || tel.isEmpty() || fechap.isEmpty() || fechad.isEmpty()){
 
-        BDDPrestamos prestamo = new BDDPrestamos(this,"RegistrosPrestamos", null, 1);
-        SQLiteDatabase bd = prestamo.getWritableDatabase();
+            Toast.makeText(this, "Error, Campos Vacios",Toast.LENGTH_SHORT).show();
 
-        if(bd!=null){
-            ContentValues nuevoregistro = new ContentValues();
-            nuevoregistro.put("Nombre", nomObj);
-            nuevoregistro.put("Cantidad", cantidad);
-            nuevoregistro.put("PersonaPrestamo", pre);
-            nuevoregistro.put("Telefono", tel);
-            nuevoregistro.put("FechaP",fechap);
-            nuevoregistro.put("FechaD",fechad);
-            nuevoregistro.put("Descripcion",descrip);
-            long i = bd.insert("Registros", null, nuevoregistro);
-            if(i>0){
-                Toast.makeText(this, "Prestamo Registrado",Toast.LENGTH_SHORT).show();
-                bd.close();
-                NO.setText("");
-                Cant.setText("");
-                AP.setText("");
-                Tel.setText("");
-                FechP.setText("");
-                FechD.setText("");
-                Desc.setText("");
-            }
-            else{Toast.makeText(this, "hdp",Toast.LENGTH_SHORT).show();}
         }
+        else{
 
+            BDDPrestamos prestamo = new BDDPrestamos(this,"RegistrosPrestamos", null, 1);
+            SQLiteDatabase bd = prestamo.getWritableDatabase();
 
+            if(bd!=null){
+                ContentValues nuevoregistro = new ContentValues();
+                nuevoregistro.put("Nombre", nomObj);
+                nuevoregistro.put("Cantidad", cantidad);
+                nuevoregistro.put("PersonaPrestamo", pre);
+                nuevoregistro.put("Telefono", tel);
+                nuevoregistro.put("FechaP",fechap);
+                nuevoregistro.put("FechaD",fechad);
+                nuevoregistro.put("Descripcion",descrip);
+                long i = bd.insert("Registros", null, nuevoregistro);
+                if(i>0){
+                    Toast.makeText(this, "Prestamo Registrado",Toast.LENGTH_SHORT).show();
+                    bd.close();
+                    NO.setText("");
+                    Cant.setText("");
+                    AP.setText("");
+                    Tel.setText("");
+                    FechP.setText("");
+                    FechD.setText("");
+                    Desc.setText("");
+                }
+                else{Toast.makeText(this, "Error, Registro No Guardado",Toast.LENGTH_SHORT).show();}
+            }
+
+        }
 
     }
 }
