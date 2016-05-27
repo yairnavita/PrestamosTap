@@ -17,6 +17,7 @@ public class EliminarActivity extends AppCompatActivity {
 
     String[] arreglo;
     ListView lista;
+
     private EditText COD;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

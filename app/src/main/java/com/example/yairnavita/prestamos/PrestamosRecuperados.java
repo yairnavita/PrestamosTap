@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class PrestamosPendientes extends Activity {
+public class PrestamosRecuperados extends Activity {
 
         String[] arreglo;
         ListView lista;

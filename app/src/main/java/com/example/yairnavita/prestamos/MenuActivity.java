@@ -1,13 +1,9 @@
 package com.example.yairnavita.prestamos;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.app.AlertDialog;
 import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity {
@@ -37,7 +33,7 @@ public class MenuActivity extends AppCompatActivity {
 
     }
     public void prestamospendientes(View view){
-        Intent i=new Intent(this,PrestamosPendientes.class);
+        Intent i=new Intent(this,PrestamosRecuperados.class);
         startActivity(i);
         Toast.makeText(this,"Prestamos finalizados",Toast.LENGTH_SHORT).show();
     }
