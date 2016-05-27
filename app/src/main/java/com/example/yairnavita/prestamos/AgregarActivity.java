@@ -97,6 +97,7 @@ public class AgregarActivity extends Activity implements View.OnClickListener {
                 nuevoregistro.put("FechaP",fechap);
                 nuevoregistro.put("FechaD",fechad);
                 nuevoregistro.put("Descripcion",descrip);
+                nuevoregistro.put("devuelto",0);
                 long i = bd.insert("Registros", null, nuevoregistro);
                 if(i>0){
                     Toast.makeText(this, "Prestamo Registrado",Toast.LENGTH_SHORT).show();

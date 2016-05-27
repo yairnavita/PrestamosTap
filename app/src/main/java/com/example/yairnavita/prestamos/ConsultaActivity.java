@@ -22,7 +22,7 @@ public class ConsultaActivity extends Activity  {
         SQLiteDatabase bd = prestamo.getWritableDatabase();
 
         if(bd!=null){
-            Cursor c=bd.rawQuery("Select * From Registros",null);
+            Cursor c=bd.rawQuery("Select * From Registros where devuelto=0",null);
             int cantidad = c.getCount();
             int i=0;
             arreglo = new String[cantidad];

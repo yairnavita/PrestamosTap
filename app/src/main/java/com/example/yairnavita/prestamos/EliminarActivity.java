@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class EliminarActivity extends AppCompatActivity {
+
     String[] arreglo;
     ListView lista;
     private EditText COD;
@@ -30,19 +31,19 @@ public class EliminarActivity extends AppCompatActivity {
         BDDPrestamos prestamo = new BDDPrestamos(this,"RegistrosPrestamos", null, 1);
         SQLiteDatabase bd = prestamo.getWritableDatabase();
 
-        if(bd!=null){
-            Cursor c=bd.rawQuery("Select * From Registros",null);
+        if(bd!=null) {
+            Cursor c = bd.rawQuery("Select * From Registros where devuelto=0", null);
             int cantidad = c.getCount();
-            int i=0;
+            int i = 0;
             arreglo = new String[cantidad];
-            if (c.moveToFirst()){
+            if (c.moveToFirst()) {
                 do {
-                    String linea = "Codigo: "+c.getString(0)+"\nNombre Objeto: "+c.getString(1)+"\nCantidad: "+c.getString(2)+"\n¿A Quién se lo Preste?: "+c.getString(3);
+                    String linea = "Codigo: " + c.getString(0) + "\nNombre Objeto: " + c.getString(1) + "\nCantidad: " + c.getString(2) + "\n¿A Quién se lo Preste?: " + c.getString(3);
                     arreglo[i] = linea;
                     i++;
-                }while (c.moveToNext());
+                } while (c.moveToNext());
             }
-            ArrayAdapter<String>adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, arreglo);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arreglo);
             ListView lista = (ListView) findViewById(R.id.listaregistroseliminar);
             lista.setAdapter(adapter);
         }
@@ -53,27 +54,18 @@ public class EliminarActivity extends AppCompatActivity {
         BDDPrestamos prestamo = new BDDPrestamos(this,"RegistrosPrestamos", null, 1);
         SQLiteDatabase bd = prestamo.getWritableDatabase();
         String cod = COD.getText().toString();
-        int cant = bd.delete("Registros", "Id=" + cod, null);
+        ContentValues act=new ContentValues();
+        act.put("devuelto","1");
+        int cant =0;
+        cant=bd.update("Registros",act,"Id="+cod,null);
         bd.close();
         COD.setText("");
         Intent i = new Intent(this, EliminarActivity.class);
         this.finish();
         startActivity(i);
-        if (cant == 1){Toast.makeText(this, "Se Borro el Registro Exitosamente", Toast.LENGTH_SHORT).show();}
+        if (cant == 1){Toast.makeText(this, "Objeto devuelto", Toast.LENGTH_SHORT).show();}
         else{Toast.makeText(this, "No Existe Registro con el código Ingresado",Toast.LENGTH_SHORT).show();}
     }
-    public void recuperarboton(View v){
-        BDDPrestamos prestamo = new BDDPrestamos(this,"RegistrosPrestamos", null, 1);
-        SQLiteDatabase bd = prestamo.getWritableDatabase();
-        String cod = COD.getText().toString();
-        int cant = bd.delete("Registros", "Id=" + cod, null);
-        bd.close();
-        COD.setText("");
-        Intent i = new Intent(this, EliminarActivity.class);
-        this.finish();
-        startActivity(i);
-        if (cant == 1){Toast.makeText(this, "Se Borro el Registro Exitosamente", Toast.LENGTH_SHORT).show();}
-        else{Toast.makeText(this, "No Existe Registro con el código Ingresado",Toast.LENGTH_SHORT).show();}
-    }
+
 }
 

@@ -21,26 +21,31 @@ public class MenuActivity extends AppCompatActivity {
     public void agregarnuevo(View view) {
         Intent i = new Intent(this, AgregarActivity.class);
         startActivity(i);
-        Toast.makeText(this, "Agregar Registro", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Agregar prestamo", Toast.LENGTH_SHORT).show();
 
     }
     public void consulta(View view) {
         Intent i = new Intent(this, ConsultaActivity.class);
         startActivity(i);
-        Toast.makeText(this, "Consultar Registros", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Consultar prestamos", Toast.LENGTH_SHORT).show();
 
     }
 
     public void salir(View view){
         finish();
-        Toast.makeText(this, "Adios", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Hasta luego!", Toast.LENGTH_SHORT).show();
 
+    }
+    public void prestamospendientes(View view){
+        Intent i=new Intent(this,PrestamosPendientes.class);
+        startActivity(i);
+        Toast.makeText(this,"Prestamos finalizados",Toast.LENGTH_SHORT).show();
     }
 
     public void borrarregistro(View view){
         Intent i = new Intent(this, EliminarActivity.class);
         startActivity(i);
-        Toast.makeText(this, "Borrar Registro", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Marcar devolución", Toast.LENGTH_SHORT).show();
 
     }
 }
